@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'static_pages/help'
   get 'users/new'
+  get 'users/edit'
 
   root 'static_pages#home'
 

@@ -15,10 +15,11 @@
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <%= link_to "Music Place", '#', id: "logo" %>
+        <%= link_to "Music Place", root_path, id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   '#' %></li>
+            <li><%= link_to "New",   new_user_path %></li>
+            <li><%= link_to "Home",   root_path %></li>
             <li><%= link_to "Help",   '#' %></li>
           </ul>
         </nav>
