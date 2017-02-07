@@ -1,9 +1,16 @@
 <h1>StaticPages#Search</h1>
 <p>
-viewurl: <%= @trackViewUrl %>
+URL
+<% @result["results"].each do |p| -%>
+  <li><%= p["previewUrl"] %></li>
+<% end -%>
 </p>
 <p>
-name: <%= @trackName %>
+NAME
+<% @result["results"].each do |p| -%>
+  <li><%= p["trackName"] %></li>
+<% end -%>
+
 </p>
 
 <!-- リクエストパラメタを表示-->

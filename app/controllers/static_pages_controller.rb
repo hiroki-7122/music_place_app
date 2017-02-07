@@ -43,7 +43,10 @@ class StaticPagesController < ApplicationController
         # responseのbody要素をJSON形式で解釈し、hashに変換
         @result = JSON.parse(res.body)
         # 表示用の変数に結果を格納
-        @trackViewUrl = @result["results"][0]["trackViewUrl"]
+        @trackViewUrl ="url:"+@result["results"][0]["trackViewUrl"]
+        #for num in 1..9 do
+        #  @trackViewUrl[num] =@trackViewUrl+"url:"+@result["results"][num]["trackViewUrl"]
+        #end
         @trackName = @result["results"][0]["trackName"]
       # 別のURLに飛ばされた場合
     else
