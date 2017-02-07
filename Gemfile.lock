@@ -61,8 +61,10 @@ GEM
     execjs (2.7.0)
     ffi (1.9.17)
     formatador (0.2.5)
+    geocoder (1.4.2)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     guard (2.13.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
@@ -198,6 +200,8 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.6)
   byebug (= 9.0.0)
   coffee-rails (= 4.2.1)
+  geocoder
+  gmaps4rails
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   jbuilder (= 2.4.1)
