@@ -1,0 +1,11 @@
+/Users/exit/.rbenv/versions/2.2.2/bin/ruby -r ./siteconf20170208-14224-1qkp5fi.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20170208-14224-1b4smmp

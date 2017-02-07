@@ -11,4 +11,7 @@ end
 
   def help
   end
+
+  def search
+  end
 end
