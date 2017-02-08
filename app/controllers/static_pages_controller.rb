@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
   @hash = Gmaps4rails.build_markers(@users) do |user, marker|
     marker.lat user.latitude
     marker.lng user.longitude
-    marker.infowindow user.description
+    marker.infowindow user.title+"<br><center>"+user.description+"</center>"
     marker.json({title: user.title})
     end
   end
