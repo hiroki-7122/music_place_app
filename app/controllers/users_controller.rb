@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    @key=params[:name][:description]
     @user = User.new
   end
 

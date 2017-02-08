@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'static_pages/search'
   get 'static_pages/search_form'
   get 'users/new'
-  get 'users/edit'
+  #get 'users/edit'
 
   root 'static_pages#home'
 

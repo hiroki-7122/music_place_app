@@ -16,9 +16,12 @@ URL
 </p>
 <p>
 NAME
+<%= form_tag(users_new_path, method: "get") do %>
 <% @result["results"].each do |p| -%>
-  <li><%= p["trackName"] %></li>
+  <label><%= radio_button 'name','description', p["trackName"],{} %><%= p["trackName"] %></label>
 <% end -%>
+<%= submit_tag("Choice") %>
+<% end %>
 
 </p>
 

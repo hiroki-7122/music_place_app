@@ -18,7 +18,8 @@
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_field :description,value: @key,style: "display:none" %>
+    曲名:<%= @key %>
   </div>
 
   <div class="field">
