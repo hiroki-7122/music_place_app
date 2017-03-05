@@ -1,13 +1,42 @@
-<h1>Music and Place#home</h1>
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
+<!--h1>Music and Place#home</h1-->
+
+  <div id="map" style='width: 100%; height: 600px;'></div>
+
+
+<div id="location_latitude"></div>
+<div id="location_longitude"></div>
 
 <script type="text/javascript">
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers(<%=raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-    });
+//document.addEventListener("DOMContentLoaded", function() {
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 60000,
+    maximumAge: 0
+  };
+  window.navigator.geolocation.getCurrentPosition(success, error, options);
+//}, false);
+
+function success(pos) {
+  document.getElementById('location_latitude').value = pos.coords.latitude;
+  document.getElementById('location_longitude').value = pos.coords.longitude;
+  console.log(document.getElementById('location_latitude').value);
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    markers_here = handler.addMarkers([{"lat":document.getElementById('location_latitude').value,"lng":document.getElementById('location_longitude').value,"infowindow":"現在地"}]);
+    handler.bounds.extendWith(markers,markers_here);
+    handler.fitMapToBounds();
+  });
+}
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+}
+
 </script>
